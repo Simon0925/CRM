@@ -1,0 +1,46 @@
+.status-toggle{
+    
+    .wrap{
+        padding: .2rem  .5rem;
+        color: white;
+        display: flex;
+        width: 140px;
+        border-radius: .625rem;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        
+    }
+
+    .container-variants{
+        margin-top: .3rem;
+        display: flex;
+        flex-direction: column;
+        background-color: #141820;
+        border-radius: .625rem;
+        position: absolute;
+        width: 140px;
+        gap: .5rem;
+        padding: .5rem;
+        
+        .confirmed{
+            padding: .2rem  .5rem;
+            cursor: pointer;
+            &:hover{
+                background-color: green;
+                border-radius: .625rem;
+                color: white;
+            }
+        }
+        .not-confirmed{
+            padding: .2rem  .5rem;
+            cursor: pointer;
+            &:hover{
+                background-color: #B22222;
+                border-radius: .625rem;
+                color: white;
+            }
+        }
+
+    }
+}

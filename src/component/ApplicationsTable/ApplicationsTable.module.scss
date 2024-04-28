@@ -1,0 +1,21 @@
+.wrap{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    border-radius: .625rem;
+    .title{
+        width: 100%;
+        padding: 1rem;
+        background-color: rgb(31 35 45);
+        color:#707290 ;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+       
+        .center{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-right: 2rem;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; 
+    height: 60vh;
+    background-color: #141820;
+    border: 1px solid rgb(37 42 53 );
+    border-radius: .625rem;
+    z-index: 1500;
+    overflow: hidden;
+    cursor: default;
+    padding: 3rem 2rem 2rem;
+    .close-btn{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+        display: inline-flex;
+        height: 2rem;
+        width: 2rem;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        border-style: solid;
+        --tw-border-opacity: 1;
+        border-color: rgb(37 42 53 / var(--tw-border-opacity));
+        font-size: .875rem;
+        line-height: 1.25rem;
+        --tw-text-opacity: 1;
+        color: rgb(144 146 178 / var(--tw-text-opacity));
+        background-color: #1f232d;
+        transition: background-color .3s;
+
+
+    }
+   
+}

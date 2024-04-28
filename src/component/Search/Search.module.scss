@@ -1,0 +1,37 @@
+ 
+        .search-container{
+            background-color: rgb(19 22 30 );
+            width: 100%;
+            display: flex;
+            align-items: center;
+            min-height: 100px;       
+            
+            span{
+                position: absolute;
+                margin-left: 0.4em;
+                
+                
+            }
+        }
+        .search-inpt{
+            width: 100%;
+            background-color: #1A1E27;
+            border-radius: 15px;
+            outline: none;
+            border: 1px solid  rgb(33 39 52 );
+            padding: 1.5em 2em 1.5em 2.5em;
+            height: 20px;
+            font-weight: 500;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            color: white;
+            font-family: sans-serif;
+           
+            
+           
+            &::placeholder {
+                color: #707290;;
+                opacity: 1; 
+              }
+            
+        }
