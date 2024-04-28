@@ -2,12 +2,12 @@
     width: 280px;
     height: 100vh;
     background-color: #141820;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 3rem;
 
     .logo-wrap{
+        padding: 1rem;
         display: flex;
         justify-content: center;
         width: 100%;
