@@ -1,40 +1,41 @@
 import { useEffect, useState } from 'react';
-import styles from './ApplicationToggle.module.scss';
+import styles from './SelectUsers.module.scss';
 import Arrow from '../../SVG/Arrow/Arrow';
 
 interface StatusToggleProps {
-    status: string;
     updateStatus: (newStatus: string) => void;
 }
 
-export default function ApplicationToggle({ status,updateStatus }: StatusToggleProps) {
+export default function SelectUsers({ updateStatus }: StatusToggleProps) {
+
+    const [status,setStatus] = useState("consideration")
     const [isStatus, setIsStatus] = useState(status);
     const [isActive, setIsActive] = useState(false);
     const [color, setColor] = useState('');
 
     useEffect(() => {
-        if (status === 'successful') {
-            setColor('green');
+        if (status === 'User') {
+            setColor('rgb(33, 96, 164)');
         } else if (status === 'consideration') {
             setColor('#585656');
-        } else if (status === 'canceled') {
-            setColor('#B22222');
-        }else if (status === 'trash') {
-            setColor('rgb(154, 137, 8)');
-        }
+        } 
         
     }, [status]);
 
 
-    const handleStatusChange = (newStatus: string, newColor: string) => {
-        setIsStatus(newStatus);
+    const handleStatusChange = (status: string, newColor: string) => {
+        setIsStatus(status);
         setColor(newColor);
         setIsActive(!isActive)
-        updateStatus(newStatus)
+        updateStatus(status)
     };
 
     return (
         <div className={styles['status-toggle']}>
+            <div className={styles['title']}>
+                <span>Select: </span>
+                <span>Group or User</span>
+            </div>
             <div onClick={() => setIsActive(!isActive)} style={{ backgroundColor: color }} className={styles['wrap']}>
                 {isStatus}
                 <span >
@@ -43,17 +44,11 @@ export default function ApplicationToggle({ status,updateStatus }: StatusToggleP
             </div>
             {isActive ? (
                 <div className={styles['container-variants']}>
-                    <span onClick={() => handleStatusChange('successful', 'green')} className={styles['successful']}>
-                        successful
+                    <span onClick={() => handleStatusChange('User', 'rgb(33, 96, 164)')} className={styles['user']}>
+                        User
                     </span>
                     <span onClick={() => handleStatusChange('consideration', '#585656')} className={styles['consideration']}>
                         consideration
-                    </span>
-                    <span onClick={() => handleStatusChange('canceled', '#B22222')} className={styles['canceled']}>
-                        canceled
-                    </span>
-                    <span onClick={() => handleStatusChange('trash', 'rgb(154, 137, 8)')} className={styles['trash']}>
-                        trash
                     </span>
                 </div>
             ) : null}

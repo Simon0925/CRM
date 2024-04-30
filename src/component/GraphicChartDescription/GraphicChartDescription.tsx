@@ -4,13 +4,15 @@ interface GraphicChartDescriptionProps {
     consideration:number;
     successful:number;
     canceled:number;
+    trash:number;
     allApplications:number;
+
 
 }
 
 
 
-export default function GraphicChartDescription  ({consideration,successful,canceled, allApplications}:GraphicChartDescriptionProps) {
+export default function GraphicChartDescription  ({consideration,successful,canceled, allApplications,trash}:GraphicChartDescriptionProps) {
     return (
         <>
         <div className={styles['wrap']}>
@@ -38,6 +40,13 @@ export default function GraphicChartDescription  ({consideration,successful,canc
             <div className={styles['container']}>
                 <div className={styles['circle']}>
                     <div className={styles['circle4']}></div>
+                </div>
+                <span className={styles['name']} >Trash</span>
+                <span className={styles['quantity']}>{trash}</span>
+            </div>
+            <div className={styles['container']}>
+                <div className={styles['circle']}>
+                    <div className={styles['circle5']}></div>
                 </div>
                 <span className={styles['name']} >All Applications</span>
                 <span className={styles['quantity']}>{allApplications}</span>

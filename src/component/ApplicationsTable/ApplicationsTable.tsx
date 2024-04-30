@@ -35,7 +35,7 @@ export default function ApplicationsTable ({sections,search}:ApplicationsTablePr
             const searchData = data.filter(name => name.userName.toLowerCase().startsWith(search.trim().toLowerCase()));
             data = searchData
         } 
-    } else if (sections === 'consideration' || sections === 'successful' || sections === 'canceled') {
+    } else if (sections === 'consideration' || sections === 'successful' || sections === 'canceled' || sections === 'trash' ) {
         const userData = useSelector((state: RootState) => state.data.data) || []; 
         data = userData.filter(elem => elem.status === sections);
         if (search !== '') {

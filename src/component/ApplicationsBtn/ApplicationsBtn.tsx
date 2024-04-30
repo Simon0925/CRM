@@ -8,6 +8,7 @@ export default function Navigation () {
         consideration: false,
         canceled: false,
         successful: false,
+        trash:false
     });
     const location = useLocation();
 
@@ -19,6 +20,7 @@ export default function Navigation () {
             consideration: path === 'consideration',
             canceled: path === 'canceled',
             successful: path === 'successful',
+            trash: path === 'trash',
         });
     }, [location.pathname]); 
 
@@ -34,7 +36,10 @@ export default function Navigation () {
                 <span className={`${styles.page} ${styles.btn2}`}>Canceled</span><span></span>
             </NavLink>
             <NavLink className={active.successful ? styles['active-link'] : styles['not-active-link']} to={'/successful'}>
-                <span className={`${styles.page} ${styles.btn3}`}>Successful</span>  <span></span>
+                <span className={`${styles.page} ${styles.btn2}`}>Successful</span>  <span></span>
+            </NavLink>
+            <NavLink className={active.trash ? styles['active-link'] : styles['not-active-link']} to={'/trash'}>
+                <span className={`${styles.page} ${styles.btn3}`}>Trash</span>  <span></span>
             </NavLink>
         </div>
     )

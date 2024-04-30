@@ -1,0 +1,91 @@
+.wrap{
+    margin-top: 1.3rem;
+    width: 100%;
+    height: 95.5vh;
+    background-color: rgb(26 30 39);
+    border-radius: .625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+
+    gap:3rem;
+
+    .settings-bar{
+        width: 100%;
+        display: flex;
+        gap: 2rem;
+
+        .toggle{
+
+           
+        }
+
+        .adress{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .title{
+                color: #707290;
+                font-size: 20px;
+                font-weight: 600;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+              
+            }
+            .inpt{
+                background-color: #13161e;
+                border-radius: .625rem;
+                width: 100%;
+                outline: none;
+                border: 1px solid  rgb(33 39 52 );
+                padding: 1.1rem;
+                height: 20px;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 1.25rem;
+                color: white;
+                font-family: sans-serif;
+                &::placeholder {
+                    color: #707290;;
+                    opacity: 1; 
+                }
+            }
+        }
+    }
+
+    .text-container{
+        width: 100%;
+
+        textarea{
+            width: 100%;
+            height: 40vh;
+            background-color:  #13161e;
+            border-radius: .625rem;
+            outline: none;
+            border: 1px solid  rgb(33 39 52 );
+            padding: 1rem;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25rem;
+            color: white;
+            font-family: sans-serif;
+
+            &::placeholder {
+                color: #707290;;
+                opacity: 1; 
+            }
+        }
+    }
+    .btn{
+        height: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        button{
+            width: 100px;
+        }
+    }
+}

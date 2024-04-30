@@ -18,7 +18,7 @@ export const fetchData = createAsyncThunk(
     'data/fetchData',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:8001/api/get-data`);
+            const response = await fetch(`http://localhost:8001/api/users`);
 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -69,7 +69,7 @@ export const editUserData = createAsyncThunk(
     'put/editUserData',
     async (editUser: editUserDataProps, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:8001/api/edit-data/${editUser.id}`, {
+            const response = await fetch(`http://localhost:8001/api/edit-user/${editUser.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
