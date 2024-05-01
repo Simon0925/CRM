@@ -4,11 +4,13 @@ import { useEffect, useState, useMemo, CSSProperties } from 'react';
 interface CirclePercentProps {
     currentPercent: number,
     radius?: number,
+    name:string
 }
 
 export function CirclePercent({
     currentPercent,
-    radius = 40
+    radius = 40,
+    name
 }: CirclePercentProps) {
     const [percent, setPercent] = useState<number>(0);
 
@@ -53,7 +55,7 @@ export function CirclePercent({
                 <circle cx="50" cy="50" r="40"></circle>
                 <circle style={converted} cx="50" cy="50" r="40" id='pct-ind'></circle>
             </svg>
-            <p style={st} className={styles['pct']}><span>Approve</span>{percent}%</p>
+            <p style={st} className={styles['pct']}><span>{name}</span>{percent}%</p>
         </div>
     );
 }

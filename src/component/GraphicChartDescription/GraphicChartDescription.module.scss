@@ -1,76 +1,53 @@
 .wrap {
-
-    height: 250px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 40%;
-    grid-template-rows: repeat(4, 1fr);
+    width: 70%;
 
-    
 
     .container {
         
-       
+        width: 100%;
         display: grid;
-        grid-template-columns: 25% 55% 20%; 
+        grid-template-columns: repeat(3, 1fr);
         color: #707290;
         justify-content: center;
         align-items: center;
         font-size: 20px;
         font-weight: 600;
 
-        .circle{
+        .img{
+            width: 30px;
+        }
+
+        .circle-wrap{
           
             width: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
             
-            .circle1 {
+            .circle {
                 
                 width: 30px;
                 height: 30px;
-                background-color: rgb(88, 86, 86);
-                border-radius: 99rem;
-            }
-            .circle2 {
-                width: 30px;
-                height: 30px;
-                background-color: green;
-                border-radius: 99rem;
-            }
-            .circle3 {
-                width: 30px;
-                height: 30px;
-                background-color: rgb(178, 34, 34);
-                border-radius: 99rem;
-            }
-            .circle4 {
-                width: 30px;
-                height: 30px;
-                background-color: rgb(154, 137, 8);
-                border-radius: 99rem;
-            }
-            .circle5 {
-                width: 30px;
-                height: 30px;
-                background-color: rgb(72, 72, 162);
                 border-radius: 99rem;
             }
             
         }
 
         .quantity{
-           
             width: 100%;
             display: flex;
             justify-content: center;
+            align-items: center;
         }
         .name{
           
             width: 100%;
             display: flex;
             justify-content: flex-start;
+            align-items: center;
         }
     }
 }

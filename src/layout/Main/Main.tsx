@@ -3,6 +3,7 @@ import Canceled from '../../pages/Canceled/Canceled';
 import Consideration from '../../pages/Consideration/Consideration';
 import ErrorP from '../../pages/Error/Error';
 import SendMessage from '../../pages/SendMessage/SendMessage';
+import Spam from '../../pages/Spam/Spam';
 import Statistics from '../../pages/Statistics/Statistics';
 import Successful from '../../pages/Successful/Successful';
 import Trash from '../../pages/Trash/Trash';
@@ -20,6 +21,7 @@ export default function Main() {
                 <Route path='/statistics' element={<Statistics />} />
                 <Route path='/trash' element={<Trash />} />
                 <Route path='/send-message' element={<SendMessage />} />
+                <Route path='/spam' element={<Spam />} />
                 <Route path="*" element={<ErrorP />} /> 
             </Routes>
         </div>

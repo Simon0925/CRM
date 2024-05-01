@@ -1,0 +1,18 @@
+.wrap{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+
+    .conteiner{
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+
+        .title{
+            color: #707290;
+            font-size: 30px;
+            font-weight: 600;
+        }
+    }
+}

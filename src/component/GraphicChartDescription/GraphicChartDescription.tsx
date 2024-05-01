@@ -1,57 +1,34 @@
 import styles from './GraphicChartDescription.module.scss';
 
+import grafic from '../../img/statistics.png'
+
 interface GraphicChartDescriptionProps {
-    consideration:number;
-    successful:number;
-    canceled:number;
-    trash:number;
-    allApplications:number;
-
-
+    name: string; 
+    amount: string;
+    data: {
+        name: string; 
+        quantity: number|string; 
+        color: string;
+    }[];
 }
 
-
-
-export default function GraphicChartDescription  ({consideration,successful,canceled, allApplications,trash}:GraphicChartDescriptionProps) {
+export default function GraphicChartDescription({ data,name,amount }: GraphicChartDescriptionProps) {
     return (
-        <>
         <div className={styles['wrap']}>
             <div className={styles['container']}>
-            <div className={styles['circle']}>
-                    <div className={styles['circle1']}></div>
-                </div>
-                <span className={styles['name']}>Consideration</span>
-                <span className={styles['quantity']}>{consideration}</span>
+                <span className={styles['circle-wrap']}><img className={styles['img']} src={grafic} /></span>
+                <span>{name}</span>
+                <span className={styles['quantity']}>{amount}</span>
             </div>
-            <div className={styles['container']}>
-                <div className={styles['circle']}>
-                    <div className={styles['circle2']}></div>
+            {data.map((elem, index) => (
+                <div key={index} className={styles['container']}>
+                    <div className={styles['circle-wrap']}>
+                        <div style={{ backgroundColor: elem.color }} className={styles['circle']}></div>
+                    </div>
+                    <span className={styles['name']}>{elem.name}</span>
+                    <span className={styles['quantity']}>{elem.quantity}</span>
                 </div>
-                <span className={styles['name']} >Successful</span>
-                <span className={styles['quantity']}>{successful}</span>
-            </div>
-            <div className={styles['container']}>
-                 <div className={styles['circle']}>
-                    <div className={styles['circle3']}></div>
-                </div>
-                <span className={styles['name']}>Canceled</span>
-                <span className={styles['quantity']}>{canceled}</span>
-            </div>
-            <div className={styles['container']}>
-                <div className={styles['circle']}>
-                    <div className={styles['circle4']}></div>
-                </div>
-                <span className={styles['name']} >Trash</span>
-                <span className={styles['quantity']}>{trash}</span>
-            </div>
-            <div className={styles['container']}>
-                <div className={styles['circle']}>
-                    <div className={styles['circle5']}></div>
-                </div>
-                <span className={styles['name']} >All Applications</span>
-                <span className={styles['quantity']}>{allApplications}</span>
-            </div>
+            ))}
         </div>
-        </>
-    )
-} 
+    );
+}
