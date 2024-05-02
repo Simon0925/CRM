@@ -55,6 +55,29 @@
             }
         }
     }
+    .title-container{
+        width: 100%;
+
+        textarea{
+            width: 100%;
+            height: 10vh;
+            background-color:  #13161e;
+            border-radius: .625rem;
+            outline: none;
+            border: 1px solid  rgb(33 39 52 );
+            padding: 1rem;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.25rem;
+            color: white;
+            font-family: sans-serif;
+
+            &::placeholder {
+                color: #707290;;
+                opacity: 1; 
+            }
+        }
+    }
 
     .text-container{
         width: 100%;

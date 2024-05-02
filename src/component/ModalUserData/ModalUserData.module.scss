@@ -10,6 +10,8 @@
         color: #9092b2;
         display: flex;
         justify-content: space-between;
+       
+        
         .profile-img{
             padding-left: 1rem;
         }
@@ -17,11 +19,14 @@
             display: flex;
             flex-direction: column;
             gap: .5rem;
+            width: 100%;
 
             .data{
                 display: flex;
                 justify-content: space-between;
-                width: 200px;
+                width: 100%;
+                padding-left: 1rem;
+
             }
         }
     }

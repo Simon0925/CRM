@@ -8,6 +8,7 @@ export default function SendMessage() {
     const [text, setText] = useState('');
     const [group, setGroup] = useState('consideration');
     const [inpt, setInpt] = useState<string | undefined>('');
+    const [title, setTitle] = useState('');
 
     useEffect(() => {
         if (group === 'consideration') setInpt(undefined);
@@ -22,17 +23,19 @@ export default function SendMessage() {
     const send = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const markdownText = text.replace(/\n/g, '\n'); 
-        sendData(group, group === 'consideration' ? undefined : inpt, markdownText);
+        sendData(group, group === 'consideration' ? undefined : inpt,title, markdownText);
         setInpt('');
         setText('');
     };
     
 
-    const sendData = async (group: string, userName: string | undefined, message: string) => {
+    const sendData = async (group: string, userName: string | undefined, title:string,message: string) => {
         const dataToSend = {
             group: group,
             userName: userName,
+            title:title,
             message: message
+            
         };
 
         console.log(dataToSend);
@@ -90,6 +93,14 @@ export default function SendMessage() {
                         </div>
                     </div>
                 </div>
+                <div className={styles['title-container']}>
+                <textarea
+                    placeholder='Enter title'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    className={styles.textarea}
+                />
+            </div>
                 <div className={styles['text-container']}>
                     <textarea
                         placeholder='Enter message'
