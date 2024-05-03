@@ -7,7 +7,8 @@ export default function Navigation () {
         applications: false,
         statistics: false,
         sendMessage:false,
-        spam:false
+        spam:false,
+        spend:false
     });
     const location = useLocation();
 
@@ -18,7 +19,8 @@ export default function Navigation () {
             applications: path === '' || path === 'consideration' || path === 'canceled' || path === 'successful'||path === 'trash',
             statistics: path === 'statistics',
             sendMessage: path === 'send-message',
-            spam: path === 'spam'
+            spam: path === 'spam',
+            spend:path === 'spend',
         });
     }, [location.pathname]); 
 
@@ -35,6 +37,9 @@ export default function Navigation () {
             </NavLink>
             <NavLink className={active.spam ? styles['active-link'] : styles['not-active-link']} to={'/spam'}>
                 <span className={styles['page']}>Spam</span>
+            </NavLink>
+            <NavLink className={active.spend ? styles['active-link'] : styles['not-active-link']} to={'/spend'}>
+                <span className={styles['page']}>Spend</span>
             </NavLink>
         </div>
     )
