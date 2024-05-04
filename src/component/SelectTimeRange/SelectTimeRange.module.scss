@@ -1,0 +1,28 @@
+.wrap{
+    background-color: rgb(26, 30, 39);
+    border-radius: 0.625rem;
+    padding: .8rem;
+    cursor: pointer;
+    position: relative;
+
+    .title{
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .calendar-container{
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(26, 30, 39);
+        border-radius: 0.625rem;
+        margin-top: 1rem;
+        right: 0;
+
+
+    }
+    .active{
+        display: none;
+    }
+}

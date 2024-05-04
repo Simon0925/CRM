@@ -1,0 +1,29 @@
+.years-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: rgb(26 30 39 );
+    border-end-end-radius: .625rem;
+    border-end-start-radius: .625rem;
+    place-items: center;
+    grid-template-rows: repeat(5, 1fr);
+    
+    .year{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: .875rem;
+        line-height: 1.25rem;
+        text-align: center;
+        width: 3.5rem;
+        height: 2.5rem;
+
+        &:hover{
+            --tw-bg-opacity: 1;
+            background-color: rgb(48 55 69 / var(--tw-bg-opacity));
+            border-radius: 0.625rem;
+            
+        }
+       
+    }
+}

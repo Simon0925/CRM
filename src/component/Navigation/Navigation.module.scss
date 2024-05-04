@@ -1,7 +1,6 @@
 .wrap{
     display: flex;
     flex-direction: column;
-  
     width: 100%;
    
     
@@ -18,10 +17,10 @@
             width: 100%;
             cursor: pointer;
             color: white;
-            padding: .5rem;
+            padding: .5rem 0 0 3rem;
             font-size: 20px;
             display: flex;
-            justify-content: center;
+           
         }
         span{
             width: 100%;
@@ -39,10 +38,10 @@
         .page{
             width: 100%;
             cursor: pointer;
-            padding: .5rem;
+            padding: .5rem 0 0 3rem;
             font-size: 20px;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
 
         }
 

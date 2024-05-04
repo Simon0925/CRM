@@ -18,6 +18,9 @@ export function useUserData() {
     const userData = useSelector((state: RootState) => state.data.data);
     const expenses = useSelector((state: RootState) => state.expenses.expensesData);
 
+    console.log("expenses======",expenses)
+
+
     const consideration = useMemo(() => userData.filter(elem => elem.status === 'consideration').length, [userData]);
     const successful = useMemo(() => userData.filter(elem => elem.status === 'successful').length, [userData]);
     const canceled = useMemo(() => userData.filter(elem => elem.status === 'canceled').length, [userData]);
@@ -82,7 +85,6 @@ export function useUserData() {
         }
     ];
 
-    console.log("userData",userData)
 
 
     let curentValue = 0

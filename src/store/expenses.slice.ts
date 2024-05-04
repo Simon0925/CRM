@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 interface Expense {
+    _id: string;
     name: string;
     quantity: number;
     date: string;
