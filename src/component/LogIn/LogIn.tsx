@@ -4,6 +4,8 @@ import styles from './LogIn.module.scss';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/auth.slice';
 
+import {host} from '../../config/config'
+
 
 
 export default function LogIn () {
@@ -27,7 +29,7 @@ export default function LogIn () {
         e.preventDefault();
        
         try {
-            const response = await fetch(`http://localhost:8001/api/auth`, {
+            const response = await fetch(`${host}/api/auth`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

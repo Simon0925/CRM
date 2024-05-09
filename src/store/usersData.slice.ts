@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import {host} from '../config/config'
+
 export interface UserData {
     note: string;
     status: string;
@@ -18,7 +20,7 @@ export const fetchData = createAsyncThunk(
     'data/fetchData',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:8001/api/users`);
+            const response = await fetch(`${host}/api/users`);
 
             if (!response.ok) {
                 throw new Error('Network response was not ok');
@@ -40,7 +42,7 @@ export const accept = createAsyncThunk(
     'post/acceptedStatus',
     async (acceptedData: acceptedProps, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:8001/api/accepted/${acceptedData.id}`, {
+            const response = await fetch(`${host}/api/accepted/${acceptedData.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +71,7 @@ export const editUserData = createAsyncThunk(
     'put/editUserData',
     async (editUser: editUserDataProps, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:8001/api/edit-user/${editUser.id}`, {
+            const response = await fetch(`${host}/api/edit-user/${editUser.id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

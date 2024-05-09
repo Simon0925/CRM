@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
+import {host} from '../config/config'
+
 interface Expense {
     _id: string;
     name: string;
@@ -21,7 +23,7 @@ export const fetchExpensesData = createAsyncThunk(
     'expenses/fetchData',
     async (_, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:8001/api/expenses`);
+            const response = await fetch(`${host}/api/expenses`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

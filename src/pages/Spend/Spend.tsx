@@ -42,9 +42,9 @@ export default function Spend() {
     const [addExpense, setAddExpense]= useState(false);
 
     
-    const fb: Expense[] = [];
-    const tikTok: Expense[] = [];
-    const other: Expense[] = [];
+    let fb: Expense[] = [];
+    let tikTok: Expense[] = [];
+    let other: Expense[] = [];
 
     expenses.forEach(elem => {
         if(elem.name === "FB") {
@@ -105,7 +105,32 @@ export default function Spend() {
     
     useEffect(() => {
         let filteredData = filter();
-        setCurrentData(filteredData);
+
+        let fb: Expense[] = [];
+        let tikTok: Expense[] = [];
+        let other: Expense[] = [];
+
+
+        filteredData.forEach(elem => {
+            if(elem.name === "FB") {
+                fb.push(elem);
+            } else if(elem.name === "Tik-Tok") {
+                tikTok.push(elem);
+            } else if(elem.name === "Other") {
+                other.push(elem);
+            }
+        });
+
+        if(active === "FB") {
+            setCurrentData(fb);
+        } else if(active === "Tik-Tok") {
+            setCurrentData(tikTok);
+        } else if(active === "Other") {
+            setCurrentData(other);
+        } else if(active === "all-spends") {
+            setCurrentData(filteredData);
+        }
+
     }, [fillterDate]);
     
 

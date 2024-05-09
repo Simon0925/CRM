@@ -14,16 +14,23 @@ export default function Filter ({fillter}:FilterProps) {
 
     const [date, setDate] = useState<{ from: string; to: string }>({ from: '', to: '' });
 
+
+
     useEffect(()=>{
         console.log(date)
     },[date])
+
+    const data = () => {
+        fillter(date);
+        setDate(prevDate => ({ ...prevDate }));
+    }
 
     return(
         <>
             <div className={styles['wrap']}>
                 <SelectDate setDate={setDate} />
                 <SelectTimeRange setDate={setDate}  />
-                <Button click={() => fillter(date)} text={'Show'} color={'rgb(48, 50, 55)'} textColor={'rgb(112, 114, 144)'} hoverColor={'rgb(112, 114, 144)'} />
+                <Button click={data} text={'Show'} color={'rgb(48, 50, 55)'} textColor={'rgb(112, 114, 144)'} hoverColor={'rgb(112, 114, 144)'} />
             </div>
         </>
     )

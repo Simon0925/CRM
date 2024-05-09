@@ -1,12 +1,25 @@
 
     .modal-content {
-        position: absolute;
-        width: 400px;
-        height: 300px;
-        background-color: red;
+        position: fixed;
+        top: 50%;
         left: 50%;
-        top: 30%;
         transform: translate(-50%, -50%);
+        width: 60%;
+        height: 60vh;
+        background-color: #141820;
+        border: 1px solid rgb(37, 42, 53);
+        border-radius: 0.625rem;
+        z-index: 1500;
+        overflow: hidden;
+        cursor: default;
+        padding: 3rem 2rem 2rem;
+
+        .form-container{
+
+            h1{
+                color: #9092b2;
+            }
+        }
        
     }
 

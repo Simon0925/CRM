@@ -44,7 +44,7 @@ function App() {
     <>
       <div className='wrap-app'>
         {
-        isLogin ?
+        !isLogin ?
          <>
           <LeftBar />
           <Main />

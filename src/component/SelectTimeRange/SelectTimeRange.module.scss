@@ -4,7 +4,7 @@
     padding: .8rem;
     cursor: pointer;
     position: relative;
-
+    
     .title{
         width: 200px;
         display: flex;
@@ -12,6 +12,7 @@
     }
 
     .calendar-container{
+        border: 1px solid #33333e;
         position: absolute;
         display: flex;
         flex-direction: row;

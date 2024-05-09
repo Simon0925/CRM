@@ -117,10 +117,10 @@ export function useUserData() {
 
     const ROI = (profit / costOfInvestment) * 100
 
-    const fbPercent = +((fb * 100) / profit).toFixed(0);
-    const tikTokPercent = +((tikTok * 100) / profit).toFixed(0);
-    const otherrcent = +((other * 100) / profit).toFixed(0);
-    const curentValuePercent = +((profit * 100) / profit).toFixed(0);
+    const fbPercent = +((fb * 100) / costOfInvestment).toFixed(0);
+    const tikTokPercent = +((tikTok * 100) / costOfInvestment).toFixed(0);
+    const otherrcent = +((other * 100) / costOfInvestment).toFixed(0);
+    const curentValuePercent = +((costOfInvestment * 100) / costOfInvestment).toFixed(0);
 
     const approve = (100 / (allApplications - consideration - trash) * successful).toFixed(0);
 

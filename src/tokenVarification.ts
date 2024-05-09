@@ -1,3 +1,6 @@
+import {host} from './config/config'
+
+
 async function tokenVarification () {
 
 
@@ -5,7 +8,7 @@ async function tokenVarification () {
     if (!token) return null
     if (token) {
       try {
-        const response = await fetch('http://localhost:8001/api/verify-token', {
+        const response = await fetch(`${host}/api/verify-token`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

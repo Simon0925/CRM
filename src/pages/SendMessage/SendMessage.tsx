@@ -3,6 +3,9 @@ import styles from './SendMessage.module.scss';
 import Button from '../../UI/Button/Button';
 import SelectUsers from '../../component/SelectUsers/SelectUsers';
 
+
+import {host} from "../../config/config"
+
 export default function SendMessage() {
     const [text, setText] = useState('');
     const [title, setTitle] = useState('');
@@ -61,7 +64,7 @@ export default function SendMessage() {
         }
     
         try {
-            const response = await fetch(`http://localhost:8001/api/send-message`, {
+            const response = await fetch(`${host}/api/send-message`, {
                 method: 'POST',
                 body: formData,
             });
