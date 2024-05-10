@@ -157,7 +157,7 @@ export default function Spend() {
                             </div>
                     ))}  
 
-            {addExpense ? <AddExpense /> : null}
+            {addExpense ? <AddExpense closeModal={setAddExpense} /> : null}
         </div>
     )
 }

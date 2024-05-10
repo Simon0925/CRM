@@ -6,12 +6,8 @@ interface StatusToggleProps {
     updateStatus: (newStatus: string) => void;
 }
 
-
-
-export default function SelectTarget ({updateStatus}:StatusToggleProps) {
-
-    
-    const [status,setStatus] = useState("consideration")
+export default function SelectTarget({ updateStatus }: StatusToggleProps) {
+    const [status, setStatus] = useState("FB");
     const [isStatus, setIsStatus] = useState(status);
     const [isActive, setIsActive] = useState(false);
     const [color, setColor] = useState('');
@@ -19,19 +15,20 @@ export default function SelectTarget ({updateStatus}:StatusToggleProps) {
     useEffect(() => {
         if (status === 'FB') {
             setColor('rgb(33, 96, 164)');
-        } else if (status === 'consideration') {
-            setColor('#585656');
-        } 
-        
+        } else if (status === 'Tik-Tok') {
+            setColor('linear-gradient(90deg, rgba(255,0,80,1) 0%, rgba(0,242,234,1) 48%, rgba(0,0,0,1) 85%)');
+        } else if (status === 'Other') {
+            setColor('rgb(237, 105, 66)');
+        }
     }, [status]);
-
-
+    
     const handleStatusChange = (status: string, newColor: string) => {
         setIsStatus(status);
         setColor(newColor);
-        setIsActive(!isActive)
-        updateStatus(status)
+        setIsActive(!isActive);
+        updateStatus(status);
     };
+    
 
     return (
         <div className={styles['status-toggle']}>
@@ -39,9 +36,15 @@ export default function SelectTarget ({updateStatus}:StatusToggleProps) {
                 <span>Select: </span>
                 <span>Target</span>
             </div>
-            <div onClick={() => setIsActive(!isActive)} style={{ backgroundColor: color }} className={styles['wrap']}>
+            <div
+                onClick={() => setIsActive(!isActive)}
+                style={{
+                    background: color,
+                }}
+                className={styles['wrap']}
+            >
                 {isStatus}
-                <span >
+                <span>
                     <Arrow active={isActive} activeColor={'white'} color={'black'} />
                 </span>
             </div>
@@ -50,10 +53,10 @@ export default function SelectTarget ({updateStatus}:StatusToggleProps) {
                     <span onClick={() => handleStatusChange('FB', 'rgb(33, 96, 164)')} className={styles['fb']}>
                         FB
                     </span>
-                    <span onClick={() => handleStatusChange('consideration', '#585656')} className={styles['consideration']}>
+                    <span onClick={() => handleStatusChange('Tik-Tok', 'linear-gradient(90deg, rgba(255,0,80,1) 0%, rgba(0,242,234,1) 48%, rgba(0,0,0,1) 85%)')} className={styles['Tik-Tok']}>
                         Tik-Tok
                     </span>
-                    <span onClick={() => handleStatusChange('consideration', '#585656')} className={styles['consideration']}>
+                    <span onClick={() => handleStatusChange('Other', 'rgb(237, 105, 66)')} className={styles['other']}>
                         Other
                     </span>
                 </div>

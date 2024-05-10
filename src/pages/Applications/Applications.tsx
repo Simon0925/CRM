@@ -6,6 +6,7 @@ import styles from './Applications.module.scss';
 import Filter from '../../component/Filter/Filter';
 
 
+
 export default function Applications () {
 
     const [search,setSearch] = useState('')
@@ -21,6 +22,7 @@ export default function Applications () {
                     throw new Error('Function not implemented.');
                 } } />
             <ApplicationsTable sections={'applications'} search={search} />
+         
         </div>
         </>
     )

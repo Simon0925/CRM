@@ -43,9 +43,12 @@ export default function LogIn () {
                 throw new Error(`HTTP error! Status: ${response.status}, Message: ${responseData.error || 'Failed to update user data'}`);
             }
 
-            if (response.status === 200) localStorage.setItem('accessToken', responseData.accessToken);
-
-            dispatch(login({login:true, id:responseData.id}));
+            if (response.status === 200) {
+                localStorage.setItem('accessToken', responseData.accessToken);
+                console.log("responseData.id",responseData.id  )
+                console.log("responseData.accessToken",responseData.accessToken )
+                dispatch(login({ login: true, id: responseData.id }));
+            }
 
         } catch (error) {
             console.log(error);

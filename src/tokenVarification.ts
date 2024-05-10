@@ -17,10 +17,9 @@ async function tokenVarification () {
         });
       
         const responseData = await response.json();
-
        
-        if (responseData.areEqual) {
-            return {areEqual:true,id:responseData.userId}
+        if (responseData.success) {
+            return {areEqual:true}
         } else {
           return false
         }
