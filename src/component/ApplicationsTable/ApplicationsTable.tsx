@@ -2,6 +2,7 @@ import ApplicationsData from "../ApplicationsData/ApplicationsData";
 import styles from "./ApplicationsTable.module.scss";
 import { applicationService } from '../../service/applicationService';
 import { useEffect, useState, useMemo } from "react";
+import Spinner from "../../UI/Spinner/Spinner";
 
 interface Application {
     id: number;
@@ -53,6 +54,10 @@ export default function ApplicationsTable({ sections, search, page, pages,filter
         fetchData();
     }, [fetchData]);
 
+    useEffect(()=>{
+        setLoading(true);
+    },[currentPage, sections, pages,search,filter])
+
     return (
         <>
             <div className={styles['wrap']}>
@@ -65,7 +70,7 @@ export default function ApplicationsTable({ sections, search, page, pages,filter
                     <span>Status</span>
                 </div>
                 <div className={styles['applications-data']}>
-                    {allData.map((elem, index) => (
+                    { !loading ? allData.map((elem, index) => (
                         <div key={index}>
                             <ApplicationsData
                                 id={elem.id}
@@ -78,9 +83,9 @@ export default function ApplicationsTable({ sections, search, page, pages,filter
                                 status={elem.status}
                                 note={elem.note}
                                 asking_source={elem.asking_source}
-                            />
+                         />
                         </div>
-                    ))}
+                    )) : <Spinner /> }
                 </div>
             </div>
         </>
