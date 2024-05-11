@@ -7,6 +7,7 @@ import Spam from '../../pages/Spam/Spam';
 import Spend from '../../pages/Spend/Spend';
 import Statistics from '../../pages/Statistics/Statistics';
 import Successful from '../../pages/Successful/Successful';
+import TestPage from '../../pages/TestPage/TestPage';
 import Trash from '../../pages/Trash/Trash';
 import styles from './Main.module.scss';
 import { Route, Routes } from 'react-router-dom'
@@ -24,6 +25,7 @@ export default function Main() {
                 <Route path='/send-message' element={<SendMessage />} />
                 <Route path='/spam' element={<Spam />} />
                 <Route path='/spend' element={<Spend />} />
+                <Route path='/test' element={<TestPage />} />
                 <Route path="*" element={<ErrorP />} /> 
             </Routes>
         </div>

@@ -4,10 +4,11 @@ import styles from './SelectTarget.module.scss';
 
 interface StatusToggleProps {
     updateStatus: (newStatus: string) => void;
+    data?:string
 }
 
-export default function SelectTarget({ updateStatus }: StatusToggleProps) {
-    const [status, setStatus] = useState("FB");
+export default function SelectTarget({ updateStatus,data }: StatusToggleProps) {
+    const [status, setStatus] = useState(data ? data : 'FB');
     const [isStatus, setIsStatus] = useState(status);
     const [isActive, setIsActive] = useState(false);
     const [color, setColor] = useState('');

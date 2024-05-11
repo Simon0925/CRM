@@ -35,11 +35,14 @@ export default function Navigation () {
             <NavLink className={active.sendMessage ? styles['active-link'] : styles['not-active-link']} to={'/send-message'}>
                 <span className={styles['page']}>Message</span>
             </NavLink>
-            <NavLink className={active.spam ? styles['active-link'] : styles['not-active-link']} to={'/spam'}>
+            {/* <NavLink className={active.spam ? styles['active-link'] : styles['not-active-link']} to={'/spam'}>
                 <span className={styles['page']}>Spam</span>
-            </NavLink>
+            </NavLink> */}
             <NavLink className={active.spend ? styles['active-link'] : styles['not-active-link']} to={'/spend'}>
                 <span className={styles['page']}>Spend</span>
+            </NavLink>
+            <NavLink className={active.spend ? styles['active-link'] : styles['not-active-link']} to={'/test'}>
+                <span className={styles['page']}>Test</span>
             </NavLink>
         </div>
     )

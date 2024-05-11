@@ -1,0 +1,86 @@
+.wrap{
+
+    display: flex;
+    gap: 1rem;
+
+    .prev-btn{
+        padding: .5rem;
+        background-color: rgb(37 42 53 );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: .375rem;
+        cursor: pointer;
+
+        &:hover{
+            outline: 1px solid #637AF4;;
+        }
+        svg{
+            rotate: 90deg;
+        }
+    }
+    .pages-btns{
+        display: flex;
+        gap: 1rem;
+
+        .page{
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgb(37 42 53 );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: .375rem;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            font-weight: 500;
+            color: rgb(144 146 178);
+            cursor: pointer;
+        }
+
+        .active{
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgb(37 42 53 );
+            border: 1px solid #637AF4;;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: .375rem;
+            font-size: .875rem;
+            line-height: 1.25rem;
+            font-weight: 500;
+            color: rgb(144 146 178);
+            cursor: pointer;
+        }
+    }
+    .next-btn{
+        padding: .5rem;
+        background-color: rgb(37 42 53 );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: .375rem;
+        cursor: pointer;
+
+        &:hover{
+            outline: 1px solid #637AF4;;
+        }
+
+        svg{
+            rotate: 270deg;
+        }
+    }
+
+    .points{
+        display: flex;
+        gap: .3rem;
+        align-items: center;
+        .point{
+            width: 7px;
+            height: 7px;
+            background-color: rgb(144 146 178);
+            border-radius: 50%;
+        }
+    }
+}

@@ -153,7 +153,7 @@ export default function Spend() {
             
             {currentData.map((elem,index)=>(
                             <div key={index}>
-                            <SpendData id={elem._id} created={elem.date} target={elem.name} amount={elem.quantity} />
+                            <SpendData id={elem._id} created={elem.date} target={elem.name} amount={elem.quantity} description={elem.description} />
                             </div>
                     ))}  
 
