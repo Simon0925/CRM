@@ -1,6 +1,6 @@
 
 
-const host = "https://54.221.11.104:8001"
+const host = "https://farhat-bot.store"
 
 // const host = 'http://localhost:8001'
 
