@@ -25,7 +25,6 @@ export default function Main() {
                 <Route path='/send-message' element={<SendMessage />} />
                 <Route path='/spam' element={<Spam />} />
                 <Route path='/spend' element={<Spend />} />
-                <Route path='/test' element={<TestPage />} />
                 <Route path="*" element={<ErrorP />} /> 
             </Routes>
         </div>

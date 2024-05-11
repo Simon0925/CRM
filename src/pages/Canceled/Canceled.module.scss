@@ -9,4 +9,13 @@
     border-radius: .625rem;
     overflow: scroll;
     padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .page-btns{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+       
+    }
 }

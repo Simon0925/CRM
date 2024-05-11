@@ -1,14 +1,23 @@
 import { useState } from 'react';
 import ApplicationsBtn from '../../component/ApplicationsBtn/ApplicationsBtn';
-import ApplicationsTable from '../../component/ApplicationsTable/ApplicationsTable';
 import Search from '../../component/Search/Search';
 import styles from './Consideration.module.scss';
 import Filter from '../../component/Filter/Filter';
+import ApplicationsTable from '../../component/ApplicationsTable/ApplicationsTable';
+import PageBtns from '../../component/PageBtns/PageBtns';
 
 
 export default function Consideration () {
 
     const [search,setSearch] = useState('')
+    const [currentPage,setCurrentPage] = useState(1)
+
+    const [allPages,setAllPages] = useState(1)
+
+    const [fillterDate, setFillterDate] = useState({
+        from:'',
+        to:''
+    })
 
     return(
         <>
@@ -16,11 +25,14 @@ export default function Consideration () {
             <Search text={setSearch} placeholder={'Enter TG address'} />
         </div>
         <div className={styles['wrap']}>
-            <ApplicationsBtn />
-            <Filter fillter={function (dateRange: { from: string; to: string; }): void {
-                    throw new Error('Function not implemented.');
-                } } />
-            <ApplicationsTable sections={'consideration'} search={search} />
+            <div>
+                <ApplicationsBtn />
+                <Filter fillter={setFillterDate} />
+                <ApplicationsTable filter={fillterDate} pages={setAllPages} page={currentPage} sections={'consideration'} search={search}/>
+            </div>
+            <div className={styles['page-btns']}>
+                <PageBtns number={setCurrentPage} totalPages={allPages}  />
+            </div>
         </div>
         </>
     )

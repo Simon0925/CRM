@@ -14,12 +14,6 @@ export default function Filter ({fillter}:FilterProps) {
 
     const [date, setDate] = useState<{ from: string; to: string }>({ from: '', to: '' });
 
-
-
-    useEffect(()=>{
-        console.log(date)
-    },[date])
-
     const data = () => {
         fillter(date);
         setDate(prevDate => ({ ...prevDate }));

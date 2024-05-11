@@ -51,7 +51,6 @@ export default function SelectDate({ setDate }: SelectDateProps) {
                 to: today
             });
         }
-       console.log('working')
     }, [currentValue, today, yesterday, weekAgo, monthAgo]);
 
     const toggle = (value: string) => {
