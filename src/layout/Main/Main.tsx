@@ -7,7 +7,6 @@ import Spam from '../../pages/Spam/Spam';
 import Spend from '../../pages/Spend/Spend';
 import Statistics from '../../pages/Statistics/Statistics';
 import Successful from '../../pages/Successful/Successful';
-import TestPage from '../../pages/TestPage/TestPage';
 import Trash from '../../pages/Trash/Trash';
 import styles from './Main.module.scss';
 import { Route, Routes } from 'react-router-dom'

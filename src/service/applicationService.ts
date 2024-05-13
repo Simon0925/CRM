@@ -2,6 +2,7 @@ import { host } from "../config/config";
 
 
 export const applicationService = async (page: number, status: string,search:string,filter: { from: string; to: string; }) => {
+    
     try {
        
 
