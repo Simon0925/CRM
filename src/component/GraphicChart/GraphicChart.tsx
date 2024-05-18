@@ -17,6 +17,7 @@ export default function TestGraphicChart({ data }: TestGraphicChartProps) {
             initialState[`quantityPercent${index}`] = 0;
         });
         setQuantityPercent(initialState);
+
     }, [data]);
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export default function TestGraphicChart({ data }: TestGraphicChartProps) {
                 return newState;
             });
         }, 10);
+
 
         return () => clearInterval(interval);
     }, [data]);
@@ -47,7 +49,9 @@ export default function TestGraphicChart({ data }: TestGraphicChartProps) {
                     }}
                     className={`${styles['column']} ${styles['column1']}`}
                 >
-                    {elem.percent}%
+                    {elem.percent === null ? 0 : elem.percent}%
+        
+                    
                 </div>
             ))}
         </div>

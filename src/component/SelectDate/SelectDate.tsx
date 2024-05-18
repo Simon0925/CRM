@@ -50,6 +50,12 @@ export default function SelectDate({ setDate }: SelectDateProps) {
                 from: to ,
                 to: today
             });
+        }else if (currentValue === 'All') {
+            to = monthAgo;
+            setDate({
+                from: '' ,
+                to: ''
+            });
         }
     }, [currentValue, today, yesterday, weekAgo, monthAgo]);
 
@@ -79,6 +85,7 @@ export default function SelectDate({ setDate }: SelectDateProps) {
                 <span onClick={() => toggle('Yesterday')}>Yesterday</span>
                 <span onClick={() => toggle('Week')}>Week</span>
                 <span onClick={() => toggle('Month')}>Month</span>
+                <span onClick={() => toggle('All')}>All</span>
             </div>
         </div>
     );

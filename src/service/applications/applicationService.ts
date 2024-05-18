@@ -1,12 +1,14 @@
-import { host } from "../config/config";
+import { host } from "../../config/config";
 
 
 export const applicationService = async (page: number, status: string,search:string,filter: { from: string; to: string; }) => {
+
+    const token = localStorage.getItem('accessToken');
     
     try {
        
 
-        const url = `${host}/api/applications?page=${page}&status=${status}&search=${search}&filterFrom=${filter.from}&filterTo=${filter.to}`;
+        const url = `${host}/api/applications?page=${page}&status=${status}&search=${search}&filterFrom=${filter.from}&filterTo=${filter.to}&token=${token}`;
 
         const response = await fetch(url);
 

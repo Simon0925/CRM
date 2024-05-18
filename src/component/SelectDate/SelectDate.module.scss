@@ -5,7 +5,7 @@
     cursor: pointer;
     width: 170px;
     position: relative;
-
+    z-index: 999;
     .select{
         display: flex;
         align-items: center;

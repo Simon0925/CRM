@@ -39,13 +39,9 @@ export default function Spend() {
         setPages(data.pages)
         setLoading(false)
         setExpenses(data.data)
-        return console.log("data:",data.data) 
     }
 
     
-    useEffect(()=>{
-        console.log("pages::",pages)
-    },[pages])
 
     useEffect(()=>{
         getData()

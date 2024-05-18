@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styles from './SendMessage.module.scss';
 import Button from '../../UI/Button/Button';
 import SelectUsers from '../../component/SelectUsers/SelectUsers';
 
 
 import {host} from "../../config/config"
+
 
 export default function SendMessage() {
     const [text, setText] = useState('');
@@ -17,65 +18,58 @@ export default function SendMessage() {
         if (group === 'consideration') setInpt(undefined);
     }, [group]);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         if (group !== 'consideration') {
             setInpt(e.target.value);
         }
-    };
+    }, [group]);
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         const file = e.target.files && e.target.files[0];
         if (file) {
             setSelectedFile(file);
         }
-    };
+    }, []);
 
-    const handleButtonClick = () => {
+    const handleButtonClick = useCallback(() => {
         const fileInput = document.getElementById('file-input');
         fileInput && fileInput.click();
-    };
+    }, []);
 
-    const send = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const markdownText = text.replace(/\n/g, '\n');
-        sendData(group, group === 'consideration' ? undefined : inpt, title, markdownText, selectedFile);
-        setInpt('');
-        setTitle('')
-        setText('');
-    };
-    
-
-
-    const sendData = async (group: string, userName: string | undefined, title: string, message: string, selectedFile: File | null) => {
+    const formData = useMemo(() => {
         const formData = new FormData();
-
         formData.append('group', group);
-
-        if (userName !== undefined) {
-            formData.append('userName', userName);
+        if (inpt !== undefined) {
+            formData.append('userName', inpt);
         }
-
-
         formData.append('title', title);
-        formData.append('message', message);
-    
+        formData.append('message', text.replace(/\n/g, '\n'));
         if (selectedFile) {
             formData.append('photo', selectedFile);
         }
-    
+        return formData;
+    }, [group, inpt, title, text, selectedFile]);
+
+    const send = useCallback((e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        sendData(formData);
+        setInpt('');
+        setTitle('');
+        setText('');
+    }, [formData]);
+
+    const sendData = async (formData: FormData) => {
+        const accessToken = localStorage.getItem('accessToken');
         try {
-            const response = await fetch(`${host}/api/send-message`, {
+            const response = await fetch(`${host}/api/send-message?accessToken=${accessToken}`, {
                 method: 'POST',
                 body: formData,
             });
-    
-            const data = await response.json();
-    
             if (!response.ok) {
-                throw new Error(data.message || 'Failed to update user data');
+                throw new Error('Failed to update user data');
             }
-    
-            console.log(data.message);
+            const responseData = await response.text();
+            console.log(responseData);
         } catch (error) {
             console.error(error);
         }

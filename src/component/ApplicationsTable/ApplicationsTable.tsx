@@ -1,6 +1,6 @@
 import ApplicationsData from "../ApplicationsData/ApplicationsData";
 import styles from "./ApplicationsTable.module.scss";
-import { applicationService } from '../../service/applicationService';
+import { applicationService } from '../../service/applications/applicationService';
 import { useEffect, useState, useMemo } from "react";
 import Spinner from "../../UI/Spinner/Spinner";
 

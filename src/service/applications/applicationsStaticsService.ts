@@ -1,11 +1,11 @@
-import { host } from "../config/config";
+import { host } from "../../config/config";
 
-export async function expensesStaticsService(filter: { from: string; to: string; }) {
+export async function applicationsStaticsService(filter: { from: string; to: string; }) {
 
     const token = localStorage.getItem('accessToken');
-
+   
     try {
-        const response = await fetch(`${host}/api/expenses-statics?filterFrom=${filter.from}&filterTo=${filter.to}&token=${token}`);
+        const response = await fetch(`${host}/api/applications-statics?filterFrom=${filter.from}&filterTo=${filter.to}&token=${token}`);
         
         if (!response.ok) {
             throw new Error(`Failed to fetch data: ${response.statusText}`);
